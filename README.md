@@ -27,7 +27,7 @@ pageMsgCollection.sendInfo('this is a msg');
 3. 当 window 对象的 error 事件发生时，获取 error 的相关信息，并发送给后台
 
 ## 注意
-- 对于跨域引用，window.onerror 是没有详信息的。这时 script 标签需要多加一个 crossorigin 的属性。同时响应头需要有 Access-Control-Allow-Origin。这样就能获得 window.onerror 的详细信息。   
+- 对于跨域引用，window.onerror 是没有详细信息的。这时 script 标签需要多加一个 crossorigin 的属性。同时响应头需要有 Access-Control-Allow-Origin。这样就能获得 window.onerror 的详细信息。   
 
 - 如果 JavaScript 代码经过压缩或编译，那么需要 Source Map 才能准确定位到错误位置，这个库只能上报原始的位置。
 
