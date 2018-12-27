@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>test</title>
+</head>
+<body>
+<h1>请打开控制台查看</h1>
+<script src="pageMsgCollection.js"></script>
+<script>
+
+// 初始化
+pageMsgCollection.init({
+    'url': 'putMsg.php',
+    'pageInfo': {
+        'form': 'test page',
+    }
+});
+
+// 输出库的相关信息
+let version = pageMsgCollection.getVersion();
+console.log('version:' + version);
+let _default = pageMsgCollection.getDefault();
+console.log(_default);
+
+// 发送自定义消息
+pageMsgCollection.sendInfo('this is a msg');
+
+// 测试
+function fun() {
+    fun2();
+}
+
+// 这个异常不会上报
+try {
+    fun();
+} catch (e) {
+    console.error(e);
+}
+
+// 这个异常会上报
+fun();
+
+</script>
+</body>
+</html>
