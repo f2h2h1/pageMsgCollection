@@ -1,16 +1,19 @@
-(function (factory) {
-    factory();
+(function (global, factory) {
 
-    // pageMsgCollection AMD Export
-    if (typeof (module) !== 'undefined') {
-        module.exports = window.pageMsgCollection;
+    let pageMsgCollection = factory();
+
+    if (typeof module === "object" && typeof module.exports === "object") {
+        module.exports = pageMsgCollection;
     } else if (typeof define === 'function' && define.amd) {
         define([], function () {
             'use strict';
-            return window.pageMsgCollection;
+            return pageMsgCollection;
         });
+    } else {
+        window.pageMsgCollection = pageMsgCollection;
     }
-})(function() {
+
+})(typeof window !== "undefined" ? window : this, function() {
 
     var VERSION = '0.0.1';
 
@@ -118,14 +121,14 @@
     }
 
     function randomString(len) {
-    　　len = len || 32;
-    　　let $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    　　let maxPos = $chars.length;
-    　　let pwd = '';
-    　　for (let i = 0; i < len; i++) {
-    　　　　pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
-    　　}
-    　　return pwd;
+        len = len || 32;
+        let $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let maxPos = $chars.length;
+        let pwd = '';
+        for (let i = 0; i < len; i++) {
+            pwd += $chars.charAt(Math.floor(Math.random() * maxPos));
+        }
+        return pwd;
     }
 
     var pageMsgCollection = function () {
@@ -165,7 +168,5 @@
         return VERSION;
     };
 
-    window.pageMsgCollection = new pageMsgCollection();
-
-    return pageMsgCollection;
+    return new pageMsgCollection();
 });
