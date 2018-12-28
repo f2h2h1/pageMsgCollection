@@ -10,7 +10,7 @@
             return pageMsgCollection;
         });
     } else {
-        window.pageMsgCollection = pageMsgCollection;
+        global.pageMsgCollection = pageMsgCollection;
     }
 
 })(typeof window !== "undefined" ? window : this, function() {
