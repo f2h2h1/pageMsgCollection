@@ -2,11 +2,10 @@
 
     let pageMsgCollection = factory();
 
-    if (typeof module === "object" && typeof module.exports === "object") {
+    if (typeof module === 'object' && typeof module.exports === 'object') {
         module.exports = pageMsgCollection;
     } else if (typeof define === 'function' && define.amd) {
-        define([], function () {
-            'use strict';
+        define('pageMsgCollection', [], function () {
             return pageMsgCollection;
         });
     } else {
