@@ -8,7 +8,7 @@
 ## 快速开始
 1. 在加载其它 JavaScript 之前引入 pageMsgCollection.js
 2. 在引入 pageMsgCollection.js 之后调用初始化方法
-```js
+```javascript
 pageMsgCollection.init({
     'url': 'your address',
     'pageInfo': {
@@ -18,9 +18,10 @@ pageMsgCollection.init({
 ```
 3. 在初始化完成之后，页面上未被 catch 的 JavaScript 异常会被发送到初始化时填写的地址
 4. 当然，你也可以主动发送消息，就像这样
-```js
+```javascript
 pageMsgCollection.sendInfo('this is a msg');
 ```
+
 ## 实现思路
 1. 使用 addEventListener 方法监听 window 对象的 error 事件
 2. 封装一个 ajax 函数
@@ -40,15 +41,15 @@ pageMsgCollection.sendInfo('this is a msg');
 
 ## 更多
 1. 获取版本号
-```js
+```javascript
 let version = pageMsgCollection.getVersion();
 ```
 2. 获取初始化时的参数
-```js
+```javascript
 let _default = pageMsgCollection.getDefault();
 ```
 3. 发送消息到其它 url
-```js
+```javascript
 pageMsgCollection.sendInfo({
     url: 'new url'
     data: {
@@ -57,7 +58,7 @@ pageMsgCollection.sendInfo({
 });
 ```
 4. 不使用缺省的 pageInfo
-```js
+```javascript
 pageMsgCollection.sendInfo({
     data: {
         pageInfo: {}
@@ -66,7 +67,7 @@ pageMsgCollection.sendInfo({
 });
 ```
 5. 自定义浏览器信息
-```js
+```javascript
 pageMsgCollection.sendInfo({
     data: {
         browserInfo: {
