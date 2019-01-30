@@ -33,7 +33,7 @@ pageMsgCollection.sendInfo('this is a msg');
 - 如果 JavaScript 代码经过压缩或编译，那么需要 Source Map 才能准确定位到错误位置，这个库只能上报原始的位置。
 
 ## 目录结构
-```
+```plaintext
 ├─pageMsgCollection.js    库
 ├─test.html               测试页面
 ├─putMsg.php              配合测试页面的后台脚本
