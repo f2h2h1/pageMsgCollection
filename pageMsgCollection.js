@@ -132,6 +132,7 @@
 
     var pageMsgCollection = function () {
         window.addEventListener('error', handleError);
+        window.addEventListener('unhandledrejection', handleError);
         return this;
     };
 
