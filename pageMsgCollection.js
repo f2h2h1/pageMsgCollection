@@ -1,15 +1,22 @@
 (function (global, factory) {
-
-    let pageMsgCollection = factory();
+    // UMD
+    let moduleNmae = 'pageMsgCollection';
+    let moduleObj = factory();
 
     if (typeof module === 'object' && typeof module.exports === 'object') {
-        module.exports = pageMsgCollection;
-    } else if (typeof define === 'function' && define.amd) {
-        define('pageMsgCollection', [], function () {
-            return pageMsgCollection;
-        });
-    } else {
-        global.pageMsgCollection = pageMsgCollection;
+        module.exports = moduleObj; // CommonJs
+    } else if (typeof define === 'function' && (define.amd || define.cmd)) {
+        if (define.amd) { // AMD
+            define(moduleNmae, [], function () {
+                return moduleObj;
+            });
+        } else { // CMD
+            define(moduleNmae, [], function(require, exports, module) {
+                return moduleObj;
+            });
+        }
+    } else { // 全局变量，一般是浏览器的全局变量 window
+        global[moduleNmae] = moduleObj;
     }
 
 })(typeof window !== "undefined" ? window : this, function() {

@@ -3,7 +3,7 @@
 - 数据会以 JSON 字符串的格式发送给后台
 
 ## 兼容
-- 作者测试过 Firefox 64, Chrome 71, IE 11, Edge
+- 作者测试过 Firefox 64, Chrome 71, Edge
 
 ## 快速开始
 1. 在加载其它 JavaScript 之前引入 pageMsgCollection.js
